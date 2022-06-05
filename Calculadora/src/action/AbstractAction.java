@@ -27,7 +27,6 @@ public class AbstractAction {
             }
             else if(button.equals(equal) && operation != null) {
                 double value2 = Double.parseDouble(textField.getText());
-                System.out.println("Aqui:" + value2);
 
                 if(operation.equals(sum)) {
                     value1 += value2;
@@ -52,11 +51,15 @@ public class AbstractAction {
                 textField.setText("");
             }
         }
+        else {
+            JOptionPane.showMessageDialog(null, "Digite um número para efetuar ou concluir uma operação");
+        }
     }
 
     private static void checkDivision(Double value, JTextField textField) {
         if(value.equals(0.0)) {
-            textField.setText("Não é possível dividir por 0");
+            textField.setText("");
+            JOptionPane.showMessageDialog(null, "Não é possível dividir por 0");
             throw new InvalidParameterException("Não é possível dividir por 0");
         }
     }
