@@ -59,7 +59,7 @@ public class ButtonPanel extends JPanel implements ActionListener {
     }
 
     private void hideButtons() {
-        var timer = new Timer(5000, ( e -> {
+        var timer = new Timer(5000, (e -> {
             for(JToggleButton button : buttons) {
                 button.setText("");
                 button.setEnabled(true);
