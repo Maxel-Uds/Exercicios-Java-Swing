@@ -3,6 +3,7 @@ package action;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.stream.Collectors;
 
 public class AbstractAction {
@@ -16,22 +17,17 @@ public class AbstractAction {
     }
 
     public static void checkPlay(ArrayList<JToggleButton> buttonsCopy, ArrayList<JToggleButton> buttons, ArrayList<JToggleButton> buttonsSelected) {
-        var btn1 = buttonsSelected.get(0);
-        var btn2 = buttonsSelected.get(1);
+        var auxList = Arrays.asList(buttonsSelected.get(0), buttonsSelected.get(1));
 
-        if(!buttonsCopy.get(buttons.indexOf(buttonsSelected.get(1))).getText().equals(buttonsCopy.get(buttons.indexOf(buttonsSelected.get(0))).getText())) {
-            var timer = new Timer(500, (e -> {
-                btn1.setEnabled(true);
-                btn1.setSelected(false);
-                btn1.setText("");
-
-                btn2.setEnabled(true);
-                btn2.setSelected(false);
-                btn2.setText("");
-
-                btn1.setBackground(null);
-                btn2.setBackground(null);
-            }));
+        if(!buttonsCopy.get(buttons.indexOf(auxList.get(1))).getText().equals(buttonsCopy.get(buttons.indexOf(auxList.get(0))).getText())) {
+            var timer = new Timer(500, e ->
+                    auxList.forEach(button -> {
+                        button.setEnabled(true);
+                        button.setSelected(false);
+                        button.setText("");
+                        button.setBackground(null);
+                    }
+            ));
 
             points -= 3;
             timer.setRepeats(false);
