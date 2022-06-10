@@ -1,9 +1,17 @@
 package graphic;
 
+import java.util.ArrayList;
+import java.util.List;
+import model.People;
+
 public class Application extends javax.swing.JFrame {
+    
+    private List<People> peoples = new ArrayList<People>();
 
     public Application() {
         initComponents();
+        salvarButton.setEnabled(false);
+        cancelarButton.setEnabled(false);
         setLocationRelativeTo(null);
     }
    
@@ -67,14 +75,14 @@ public class Application extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Id", "Logradouro", "Numero", "Complemento", "Bairro", "CEP", "Cidade"
+                "Id", "Tipo", "Logradouro", "Numero", "Complemento", "Bairro", "CEP", "Cidade"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -277,6 +285,11 @@ public class Application extends javax.swing.JFrame {
         salvarButton.setBackground(new java.awt.Color(102, 255, 102));
         salvarButton.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
         salvarButton.setText("Salvar");
+        salvarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salvarButtonActionPerformed(evt);
+            }
+        });
 
         cancelarButton.setBackground(new java.awt.Color(255, 0, 0));
         cancelarButton.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
@@ -290,10 +303,20 @@ public class Application extends javax.swing.JFrame {
         novoButton.setBackground(new java.awt.Color(102, 255, 102));
         novoButton.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
         novoButton.setText("Novo");
+        novoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                novoButtonActionPerformed(evt);
+            }
+        });
 
         editarButton.setBackground(new java.awt.Color(255, 204, 51));
         editarButton.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
         editarButton.setText("Editar");
+        editarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editarButtonActionPerformed(evt);
+            }
+        });
 
         excluirButton.setBackground(new java.awt.Color(255, 51, 51));
         excluirButton.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
@@ -384,9 +407,9 @@ public class Application extends javax.swing.JFrame {
                             .addComponent(cepTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, visualizarPessoaPanelLayout.createSequentialGroup()
                             .addComponent(salvarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(115, 115, 115)
+                            .addGap(134, 134, 134)
                             .addComponent(cancelarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(493, 493, 493)))
+                            .addGap(427, 427, 427)))
                     .addGroup(visualizarPessoaPanelLayout.createSequentialGroup()
                         .addComponent(novoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -521,12 +544,42 @@ public class Application extends javax.swing.JFrame {
     }//GEN-LAST:event_cidadeTextFieldActionPerformed
 
     private void cancelarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarButtonActionPerformed
-        // TODO add your handling code here:
+        salvarButton.setEnabled(false);
+        cancelarButton.setEnabled(false);
     }//GEN-LAST:event_cancelarButtonActionPerformed
 
     private void excluirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_excluirButtonActionPerformed
+
+    private void novoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_novoButtonActionPerformed
+        nomeTextField.setText("");
+        documentoTextField.setText("");
+        nascimentoTextField.setText("");
+        telefoneTextField.setText("");
+        emailTextField.setText("");
+        logradouroTextField.setText("");
+        numeroTextField.setText("");
+        complementoTextField.setText("");
+        bairroTextField.setText("");
+        cepTextField.setText("");
+        cidadeTextField.setText("");
+        
+        emailGroup.clearSelection();
+        telGroup.clearSelection();
+        enderecoGroup.clearSelection();
+        
+        salvarButton.setEnabled(true);
+        cancelarButton.setEnabled(true);
+    }//GEN-LAST:event_novoButtonActionPerformed
+
+    private void salvarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_salvarButtonActionPerformed
+
+    private void editarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_editarButtonActionPerformed
 
     
     public static void main(String args[]) {

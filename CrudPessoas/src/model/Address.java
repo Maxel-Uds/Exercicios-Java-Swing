@@ -10,8 +10,8 @@ public class Address {
     private String cep;
     private String cidade;
 
-    public Address(String logradouro, Integer numero, String complemento, String bairro, String cep, String cidade, String id) {
-        this.id = id;
+    public Address(String logradouro, Integer numero, String complemento, String bairro, String cep, String cidade) {
+        this.id = UUID;
         this.logradouro = logradouro;
         this.numero = numero;
         this.complemento = complemento;
