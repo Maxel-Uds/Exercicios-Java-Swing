@@ -618,7 +618,13 @@ public class Application extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelarButtonActionPerformed
 
     private void excluirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirButtonActionPerformed
-        // TODO add your handling code here:
+        var removedPeople = peoples.remove(pessoaTable.getSelectedRow());
+        addresses.remove(getAddressByPeople(removedPeople));
+
+        orderLists();
+        loadTablePeople();
+        loadTableAddress();
+        manipulateInterface(Mode.NAVEGAR);
     }//GEN-LAST:event_excluirButtonActionPerformed
 
     private void novoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_novoButtonActionPerformed
@@ -631,7 +637,6 @@ public class Application extends javax.swing.JFrame {
         }
         else if(action.equals(Mode.EDITAR)) {
             updatePeople(pessoaTable.getSelectedRow());
-            orderLists();
         }
 
         orderLists();
