@@ -3,8 +3,9 @@ package model;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
-public class People {
+public class People implements Comparable {
     private String nome;
     private String doc;
     private Date nascimento;
@@ -66,4 +67,23 @@ public class People {
         this.endereco = endereco;
     }
 
+
+    @Override
+    public int compareTo(Object object) {
+        var pessoa = (People) object;
+        return this.getNome().compareTo(pessoa.getNome());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof People)) return false;
+        People people = (People) o;
+        return getDoc().equals(people.getDoc());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getDoc());
+    }
 }
