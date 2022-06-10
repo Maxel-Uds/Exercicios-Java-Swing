@@ -8,10 +8,7 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class Application extends javax.swing.JFrame {
 
@@ -893,6 +890,7 @@ public class Application extends javax.swing.JFrame {
         addresses.get(indexEnd).setTipo(tipoEnd);
         addresses.get(indexEnd).setLogradouro(logradouroTextField.getText());
         addresses.get(indexEnd).setNumero(Integer.parseInt(numeroTextField.getText()));
+        addresses.get(indexEnd).setComplemento(complementoTextField.getText());
         addresses.get(indexEnd).setBairro(bairroTextField.getText());
         addresses.get(indexEnd).setCep(cepTextField.getText());
         addresses.get(indexEnd).setCidade(cidadeTextField.getText());
