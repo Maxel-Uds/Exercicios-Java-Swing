@@ -12,9 +12,9 @@ import java.util.*;
 
 public class Application extends javax.swing.JFrame {
 
-    private List<People> peoples = new ArrayList<People>();
-    private List<Address> addresses = new ArrayList<Address>();
-    private SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+    private final List<People> peoples = new ArrayList<People>();
+    private final List<Address> addresses = new ArrayList<Address>();
+    private final SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
     private Enum action;
     private String tipoEmail;
     private String tipoTel;
@@ -27,7 +27,6 @@ public class Application extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         emailGroup = new javax.swing.ButtonGroup();
@@ -116,18 +115,8 @@ public class Application extends javax.swing.JFrame {
         jScrollPane1.setViewportView(pessoaTable);
 
         documentoTextField.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
-        documentoTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                documentoTextFieldActionPerformed(evt);
-            }
-        });
 
         nomeTextField.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
-        nomeTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nomeTextFieldActionPerformed(evt);
-            }
-        });
 
         jLabel1.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
         jLabel1.setText("Nome:");
@@ -136,31 +125,11 @@ public class Application extends javax.swing.JFrame {
         jLabel4.setText("Email:");
 
         emailTextField.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
-        emailTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emailTextFieldActionPerformed(evt);
-            }
-        });
 
         jLabel2.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
         jLabel2.setText("Documento:");
 
         nascimentoTextField.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
-        nascimentoTextField.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                nascimentoTextFieldFocusGained(evt);
-            }
-        });
-        nascimentoTextField.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                nascimentoTextFieldMouseClicked(evt);
-            }
-        });
-        nascimentoTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nascimentoTextFieldActionPerformed(evt);
-            }
-        });
 
         jLabel3.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
         jLabel3.setText("Nascimento:");
@@ -187,11 +156,6 @@ public class Application extends javax.swing.JFrame {
         jLabel5.setText("Telefone:");
 
         telefoneTextField.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
-        telefoneTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                telefoneTextFieldActionPerformed(evt);
-            }
-        });
 
         telGroup.add(telResRadioButton);
         telResRadioButton.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
@@ -245,61 +209,31 @@ public class Application extends javax.swing.JFrame {
         jLabel7.setText("Logradouro:");
 
         logradouroTextField.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
-        logradouroTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logradouroTextFieldActionPerformed(evt);
-            }
-        });
 
         jLabel8.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
         jLabel8.setText("Número:");
 
         numeroTextField.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
-        numeroTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                numeroTextFieldActionPerformed(evt);
-            }
-        });
 
         jLabel9.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
         jLabel9.setText("Complemento:");
 
         complementoTextField.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
-        complementoTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                complementoTextFieldActionPerformed(evt);
-            }
-        });
 
         jLabel10.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
         jLabel10.setText("Bairro:");
 
         bairroTextField.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
-        bairroTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bairroTextFieldActionPerformed(evt);
-            }
-        });
 
         jLabel11.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
         jLabel11.setText("CEP:");
 
         cepTextField.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
-        cepTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cepTextFieldActionPerformed(evt);
-            }
-        });
 
         jLabel12.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
         jLabel12.setText("Cidade:");
 
         cidadeTextField.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
-        cidadeTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cidadeTextFieldActionPerformed(evt);
-            }
-        });
 
         salvarButton.setBackground(new java.awt.Color(102, 255, 102));
         salvarButton.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
@@ -560,61 +494,41 @@ public class Application extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
-    private void nomeTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nomeTextFieldActionPerformed
-
-    private void documentoTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_documentoTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_documentoTextFieldActionPerformed
-
-    private void nascimentoTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nascimentoTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nascimentoTextFieldActionPerformed
-
-    private void emailTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_emailTextFieldActionPerformed
-
-    private void emailSecundarioRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailSecundarioRadioButtonActionPerformed
+    private void emailSecundarioRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {
         tipoEmail = ((JRadioButton) evt.getSource()).getText();
-    }//GEN-LAST:event_emailSecundarioRadioButtonActionPerformed
+    }
 
-    private void telefoneTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telefoneTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_telefoneTextFieldActionPerformed
+    private void emailPrincipalRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        tipoEmail = ((JRadioButton) evt.getSource()).getText();
+    }
 
-    private void logradouroTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logradouroTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_logradouroTextFieldActionPerformed
+    private void telResRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        tipoTel = ((JRadioButton) evt.getSource()).getText();
+    }
 
-    private void numeroTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numeroTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_numeroTextFieldActionPerformed
+    private void telComerRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        tipoTel = ((JRadioButton) evt.getSource()).getText();
+    }
 
-    private void complementoTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_complementoTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_complementoTextFieldActionPerformed
+    private void telCelRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        tipoTel = ((JRadioButton) evt.getSource()).getText();
+    }
 
-    private void bairroTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bairroTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bairroTextFieldActionPerformed
+    private void endResRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        tipoEnd = ((JRadioButton) evt.getSource()).getText();
+    }
 
-    private void cepTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cepTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cepTextFieldActionPerformed
+    private void endComerRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        tipoEnd = ((JRadioButton) evt.getSource()).getText();
+    }
 
-    private void cidadeTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cidadeTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cidadeTextFieldActionPerformed
-
-    private void cancelarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarButtonActionPerformed
+    private void cancelarButtonActionPerformed(java.awt.event.ActionEvent evt) {
         manipulateInterface(Mode.NAVEGAR);
-    }//GEN-LAST:event_cancelarButtonActionPerformed
+    }
 
-    private void excluirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirButtonActionPerformed
+    private void excluirButtonActionPerformed(java.awt.event.ActionEvent evt) {
         var removedPeople = peoples.remove(pessoaTable.getSelectedRow());
         addresses.remove(getAddressByPeople(removedPeople));
 
@@ -622,13 +536,13 @@ public class Application extends javax.swing.JFrame {
         loadTablePeople();
         loadTableAddress();
         manipulateInterface(Mode.NAVEGAR);
-    }//GEN-LAST:event_excluirButtonActionPerformed
+    }
 
-    private void novoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_novoButtonActionPerformed
+    private void novoButtonActionPerformed(java.awt.event.ActionEvent evt) {
         manipulateInterface(Mode.NOVO);
-    }//GEN-LAST:event_novoButtonActionPerformed
+    }
 
-    private void salvarButtonActionPerformed(java.awt.event.ActionEvent evt) throws ParseException {//GEN-FIRST:event_salvarButtonActionPerformed
+    private void salvarButtonActionPerformed(java.awt.event.ActionEvent evt) throws ParseException {
         if(action.equals(Mode.NOVO)) {
             savePeople();
         }
@@ -640,45 +554,13 @@ public class Application extends javax.swing.JFrame {
         loadTablePeople();
         loadTableAddress();
         manipulateInterface(Mode.NAVEGAR);
+    }
 
-    }//GEN-LAST:event_salvarButtonActionPerformed
-
-    private void editarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarButtonActionPerformed
+    private void editarButtonActionPerformed(java.awt.event.ActionEvent evt) {
         manipulateInterface(Mode.EDITAR);
-    }//GEN-LAST:event_editarButtonActionPerformed
+    }
 
-    private void emailPrincipalRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailPrincipalRadioButtonActionPerformed
-        tipoEmail = ((JRadioButton) evt.getSource()).getText();
-    }//GEN-LAST:event_emailPrincipalRadioButtonActionPerformed
-
-    private void telResRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telResRadioButtonActionPerformed
-        tipoTel = ((JRadioButton) evt.getSource()).getText();
-    }//GEN-LAST:event_telResRadioButtonActionPerformed
-
-    private void telComerRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telComerRadioButtonActionPerformed
-        tipoTel = ((JRadioButton) evt.getSource()).getText();
-    }//GEN-LAST:event_telComerRadioButtonActionPerformed
-
-    private void telCelRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telCelRadioButtonActionPerformed
-        tipoTel = ((JRadioButton) evt.getSource()).getText();
-    }//GEN-LAST:event_telCelRadioButtonActionPerformed
-
-    private void endResRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endResRadioButtonActionPerformed
-        tipoEnd = ((JRadioButton) evt.getSource()).getText();
-    }//GEN-LAST:event_endResRadioButtonActionPerformed
-
-    private void endComerRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endComerRadioButtonActionPerformed
-        tipoEnd = ((JRadioButton) evt.getSource()).getText();
-    }//GEN-LAST:event_endComerRadioButtonActionPerformed
-
-    private void nascimentoTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nascimentoTextFieldFocusGained
-
-    }//GEN-LAST:event_nascimentoTextFieldFocusGained
-
-    private void nascimentoTextFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nascimentoTextFieldMouseClicked
-    }//GEN-LAST:event_nascimentoTextFieldMouseClicked
-
-    private void pessoaTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pessoaTableMouseClicked
+    private void pessoaTableMouseClicked(java.awt.event.MouseEvent evt) {
         manipulateInterface(Mode.SELECAO);
         var pessoa = peoples.get(pessoaTable.getSelectedRow());
         var endereco = getAddressByPeople(pessoa);
@@ -720,7 +602,7 @@ public class Application extends javax.swing.JFrame {
         else {
             endComerRadioButton.setSelected(true);
         }
-    }//GEN-LAST:event_pessoaTableMouseClicked
+    }
 
     private void loadTablePeople() {
         String[] colunas = {"Nome", "Documento", "Nascimento", "Tipo Email", "Email", "Tipo Telefone", "Telefone", "Endereço Id"};
@@ -915,7 +797,7 @@ public class Application extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+
     private javax.swing.JTextField bairroTextField;
     private javax.swing.JButton cancelarButton;
     private javax.swing.JTextField cepTextField;
@@ -962,6 +844,4 @@ public class Application extends javax.swing.JFrame {
     private javax.swing.JTextField telefoneTextField;
     private javax.swing.JPanel visualizarEnderecoPanel;
     private javax.swing.JPanel visualizarPessoaPanel;
-    // End of variables declaration//GEN-END:variables
-
 }
