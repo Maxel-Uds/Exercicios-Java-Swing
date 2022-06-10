@@ -1,5 +1,7 @@
 package model;
 
+import java.util.UUID;
+
 public class Address {
 
     private String id;
@@ -11,7 +13,7 @@ public class Address {
     private String cidade;
 
     public Address(String logradouro, Integer numero, String complemento, String bairro, String cep, String cidade) {
-        this.id = UUID;
+        this.id = UUID.randomUUID().toString();
         this.logradouro = logradouro;
         this.numero = numero;
         this.complemento = complemento;
