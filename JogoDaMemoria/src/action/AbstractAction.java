@@ -1,5 +1,7 @@
 package action;
 
+import graphic.Game;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
@@ -8,7 +10,9 @@ import java.util.stream.Collectors;
 
 public class AbstractAction {
 
-    private static Integer points = 0;
+    private static Game game;
+    private static Integer points;
+    private static final String[] options = {"Reiniciar", "Sair"};
 
     public static void setButtons(JToggleButton button, ArrayList<JToggleButton> buttonsCopy, ArrayList<JToggleButton> buttons) {
         button.setEnabled(false);
@@ -16,7 +20,7 @@ public class AbstractAction {
         button.setBackground(Color.BLACK);
     }
 
-    public static void checkPlay(ArrayList<JToggleButton> buttonsCopy, ArrayList<JToggleButton> buttons, ArrayList<JToggleButton> buttonsSelected) {
+    public static void checkPlay(ArrayList<JToggleButton> buttonsCopy, ArrayList<JToggleButton> buttons, ArrayList<JToggleButton> buttonsSelected) throws InterruptedException {
         var auxList = Arrays.asList(buttonsSelected.get(0), buttonsSelected.get(1));
 
         if(!buttonsCopy.get(buttons.indexOf(auxList.get(1))).getText().equals(buttonsCopy.get(buttons.indexOf(auxList.get(0))).getText())) {
@@ -39,13 +43,26 @@ public class AbstractAction {
         }
     }
 
-    private static void checkEndgame(ArrayList<JToggleButton> buttons) {
+    private static void checkEndgame(ArrayList<JToggleButton> buttons) throws InterruptedException {
         var upButtons = buttons.stream()
                 .filter(button -> !button.getText().equals(""))
                 .collect(Collectors.toList());
 
         if(upButtons.size() == buttons.size()) {
-            JOptionPane.showMessageDialog(null, ("O jogo acabou, sua pontuação é: " + points));
+            Integer option = JOptionPane.showOptionDialog(null, ("O jogo acabou, sua pontuação é: " + points + "\n Deseja jogar novamente?"), "Fim do jogo", JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, null);
+
+            if(option.equals(0)) {
+                game.dispose();
+                main(null);
+            }
+            else {
+                System.exit(0);
+            }
         }
+    }
+
+    public static void main(String[] args) throws InterruptedException {
+        points = 0;
+        game = new Game();
     }
 }
