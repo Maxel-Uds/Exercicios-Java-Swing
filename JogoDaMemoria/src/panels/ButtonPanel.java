@@ -53,11 +53,7 @@ public class ButtonPanel extends JPanel implements ActionListener {
         }
 
         if(buttonsSelected.size() == 2) {
-            try {
-                AbstractAction.checkPlay(buttonsCopy, buttons,  buttonsSelected);
-            } catch (InterruptedException ex) {
-                throw new RuntimeException(ex);
-            }
+            AbstractAction.checkPlay(buttonsCopy, buttons,  buttonsSelected);
             buttonsSelected.clear();
         }
     }

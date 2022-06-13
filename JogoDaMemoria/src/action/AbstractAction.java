@@ -20,7 +20,7 @@ public class AbstractAction {
         button.setBackground(Color.BLACK);
     }
 
-    public static void checkPlay(ArrayList<JToggleButton> buttonsCopy, ArrayList<JToggleButton> buttons, ArrayList<JToggleButton> buttonsSelected) throws InterruptedException {
+    public static void checkPlay(ArrayList<JToggleButton> buttonsCopy, ArrayList<JToggleButton> buttons, ArrayList<JToggleButton> buttonsSelected) {
         var auxList = Arrays.asList(buttonsSelected.get(0), buttonsSelected.get(1));
 
         if(!buttonsCopy.get(buttons.indexOf(auxList.get(1))).getText().equals(buttonsCopy.get(buttons.indexOf(auxList.get(0))).getText())) {
@@ -43,17 +43,17 @@ public class AbstractAction {
         }
     }
 
-    private static void checkEndgame(ArrayList<JToggleButton> buttons) throws InterruptedException {
+    private static void checkEndgame(ArrayList<JToggleButton> buttons) {
         var upButtons = buttons.stream()
                 .filter(button -> !button.getText().equals(""))
                 .collect(Collectors.toList());
 
         if(upButtons.size() == buttons.size()) {
-            Integer option = JOptionPane.showOptionDialog(null, ("O jogo acabou, sua pontuação é: " + points + "\n Deseja jogar novamente?"), "Fim do jogo", JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, null);
+            Integer option = JOptionPane.showOptionDialog(null, ("O jogo acabou, sua pontuação é: " + points + "\n Deseja jogar novamente?"), "Fim do jogo", JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[1]);
 
             if(option.equals(0)) {
                 game.dispose();
-                main(null);
+                initGame();
             }
             else {
                 System.exit(0);
@@ -61,7 +61,7 @@ public class AbstractAction {
         }
     }
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void initGame() {
         points = 0;
         game = new Game();
     }
