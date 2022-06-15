@@ -14,7 +14,8 @@ public class Calculator extends JFrame {
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(300, 300);
-        setLocation(400, 200);
+        setResizable(false);
+        setLocationRelativeTo(null);
         setLayout(new BorderLayout());
 
         var textFieldPanel = new TextFieldPanel();

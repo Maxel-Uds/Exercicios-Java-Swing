@@ -22,6 +22,7 @@ public class Application extends javax.swing.JFrame {
 
     public Application() {
         initComponents();
+        setResizable(false);
         setLocationRelativeTo(null);
         manipulateInterface(Mode.NAVEGAR);
     }

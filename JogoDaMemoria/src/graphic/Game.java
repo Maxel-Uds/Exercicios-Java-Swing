@@ -12,14 +12,11 @@ public class Game extends JFrame {
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(600, 600);
-        setLocation(400, 200);
+        setResizable(false);
+        setLocationRelativeTo(null);
         setLayout(new BorderLayout());
 
-        var buttons= new JPanel();
-        buttons.setLayout(new BorderLayout());
-        buttons.add(BorderLayout.CENTER, new ButtonPanel());
-
-        add(BorderLayout.CENTER, buttons);
+        add(BorderLayout.CENTER, new ButtonPanel());
 
         setVisible(true);
     }
