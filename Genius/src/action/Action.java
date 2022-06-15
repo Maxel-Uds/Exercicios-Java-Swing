@@ -106,13 +106,13 @@ public class Action {
          gameButtons.forEach(button -> button.setEnabled(bol));
     }
 
-    public static void initGame() {
-        game = new Genius();
-    }
-
-    public static Integer randomNumber() {
+    private static Integer randomNumber() {
         var random = new Random();
         return random.nextInt(3);
+    }
+
+    public static void initGame() {
+        game = new Genius();
     }
 
     public static List<JButton> getGameButtons() {
