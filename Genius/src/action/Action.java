@@ -108,7 +108,7 @@ public class Action {
 
     private static Integer randomNumber() {
         var random = new Random();
-        return random.nextInt(3);
+        return random.nextInt(4);
     }
 
     public static void initGame() {
